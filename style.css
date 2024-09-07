@@ -1,0 +1,334 @@
+@import url("https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap");
+
+/* start: Globals */
+:root {
+    /* This color palletes from Tailwind CSS */
+    --white: #fff;
+    --black: #000;
+    --neutral-50: #fafafa;
+    --neutral-100: #f5f5f5;
+    --neutral-200: #e5e5e5;
+    --neutral-300: #d4d4d4;
+    --neutral-400: #a3a3a3;
+    --neutral-500: #737373;
+    --neutral-600: #525252;
+    --neutral-700: #404040;
+    --neutral-800: #262626;
+    --neutral-900: #171717;
+    --neutral-950: #0a0a0a;
+    --danger-50: #fef2f2;
+    --danger-100: #fee2e2;
+    --danger-200: #fecaca;
+    --danger-300: #fca5a5;
+    --danger-400: #f87171;
+    --danger-500: #ef4444;
+    --danger-600: #dc2626;
+    --danger-700: #b91c1c;
+    --danger-800: #991b1b;
+    --danger-900: #7f1d1d;
+    --danger-950: #450a0a;
+    --warning-50: #fff7ed;
+    --warning-100: #ffedd5;
+    --warning-200: #fed7aa;
+    --warning-300: #fdba74;
+    --warning-400: #fb923c;
+    --warning-500: #f97316;
+    --warning-600: #ea580c;
+    --warning-700: #c2410c;
+    --warning-800: #9a3412;
+    --warning-900: #7c2d12;
+    --warning-950: #431407;
+    --success-50: #ecfdf5;
+    --success-100: #d1fae5;
+    --success-200: #a7f3d0;
+    --success-300: #6ee7b7;
+    --success-400: #34d399;
+    --success-500: #10b981;
+    --success-600: #059669;
+    --success-700: #047857;
+    --success-800: #065f46;
+    --success-900: #064e3b;
+    --success-950: #022c22;
+    --info-50: #eff6ff;
+    --info-100: #dbeafe;
+    --info-200: #bfdbfe;
+    --info-300: #93c5fd;
+    --info-400: #60a5fa;
+    --info-500: #3b82f6;
+    --info-600: #2563eb;
+    --info-700: #1d4ed8;
+    --info-800: #1e40af;
+    --info-900: #1e3a8a;
+    --info-950: #172554;
+    --primary-50: #eef2ff;
+    --primary-100: #e0e7ff;
+    --primary-200: #c7d2fe;
+    --primary-300: #a5b4fc;
+    --primary-400: #818cf8;
+    --primary-500: #6366f1;
+    --primary-600: #4f46e5;
+    --primary-700: #4338ca;
+    --primary-800: #3730a3;
+    --primary-900: #312e81;
+    --primary-950: #1e1b4b;
+    --text-xs: 12px;
+    --text-sm: 14px;
+    --text-base: 16px;
+    --text-lg: 18px;
+    --text-xl: 20px;
+    --text-2xl: 24px;
+    --text-3xl: 30px;
+    --text-4xl: 36px;
+    --text-5xl: 48px;
+    --rounded-sm: 2px;
+    --rounded: 4px;
+    --rounded-md: 6px;
+    --rounded-lg: 8px;
+    --rounded-xl: 12px;
+    --rounded-full: 999px;
+    --duration-150: 150ms;
+}
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: "Onest", sans-serif;
+}
+/* end: Globals */
+
+/* start: Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 240px;
+    height: 100%;
+    background-color: var(--white);
+    border-right: 1px solid var(--neutral-200);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition-property: width;
+    transition-duration: var(--duration-150);
+}
+body.sidebar-collapsed .sidebar {
+    width: 64px;
+}
+.sidebar-brand-wrapper {
+    height: 64px;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    flex-shrink: 0;
+    margin-bottom: 16px;
+}
+.sidebar-brand {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--black);
+}
+.sidebar-brand-image {
+    flex-shrink: 0;
+    margin-right: 12px;
+    width: 32px;
+    transition-property: margin-right;
+    transition-duration: var(--duration-150);
+}
+body.sidebar-collapsed .sidebar-brand-image {
+    margin-right: 16px;
+}
+.sidebar-brand-name {
+    font-weight: 700;
+    font-size: var(--text-base);
+    letter-spacing: 1px;
+}
+.sidebar-menu-wrapper {
+    height: 100%;
+    overflow-y: auto;
+    min-height: 0;
+}
+.sidebar-menu {
+    list-style-type: none;
+    margin-bottom: 16px;
+}
+.sidebar-menu-item {
+    margin-bottom: 4px;
+}
+.sidebar-menu-item:last-child {
+    margin-bottom: 0;
+}
+.sidebar-menu-item.active
+    > .sidebar-menu-item-link
+    > .sidebar-menu-item-link-arrow {
+    transform: rotateZ(90deg);
+}
+.sidebar-menu-item-title {
+    font-size: var(--text-xs);
+    color: var(--neutral-500);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    padding: 0 16px;
+}
+.sidebar-menu-item-title-collapsed {
+    text-align: center;
+    display: none;
+}
+body.sidebar-collapsed .sidebar-menu-item-title-collapsed {
+    display: block;
+}
+body.sidebar-collapsed .sidebar-menu-item-title-expanded {
+    display: none;
+}
+.sidebar-menu-item-link {
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    height: 36px;
+    text-decoration: none;
+    color: var(--neutral-700);
+    transition-property: color;
+    transition-duration: var(--duration-150);
+}
+.sidebar-menu-item-link:hover {
+    color: var(--primary-500);
+}
+.sidebar-menu-item-link-icon {
+    font-size: var(--text-lg);
+    display: flex;
+    align-items: center;
+    margin-right: 8px;
+    flex-shrink: 0;
+    transition-property: margin-left;
+    transition-duration: var(--duration-150);
+}
+body.sidebar-collapsed .sidebar-menu-item-link-icon {
+    margin-left: 6px;
+}
+.sidebar-menu-item-link-text {
+    font-size: var(--text-sm);
+    min-width: 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-weight: 500;
+    margin-right: 8px;
+}
+.sidebar-menu-item-link-arrow {
+    font-size: var(--text-base);
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+body.sidebar-collapsed .sidebar-menu-item-link-arrow {
+    display: none;
+}
+.sidebar-submenu {
+    list-style-type: none;
+    border-left: 1px solid var(--neutral-200);
+    margin-left: 16px;
+    display: none;
+}
+.sidebar-menu-item.active > .sidebar-submenu,
+.sidebar-submenu-item.active > .sidebar-submenu {
+    display: block;
+}
+body.sidebar-collapsed .sidebar-menu-item > .sidebar-submenu {
+    display: none;
+    position: fixed;
+    margin-left: 0;
+    width: 200px;
+    border: 1px solid var(--neutral-200);
+    padding: 12px 0;
+    z-index: 20;
+}
+body.sidebar-collapsed .sidebar-menu-item:hover > .sidebar-submenu {
+    display: block;
+}
+.sidebar-menu-item > .sidebar-submenu {
+    margin-left: 24px;
+}
+.sidebar-menu-item
+    > .sidebar-submenu
+    > .sidebar-submenu-item
+    > .sidebar-submenu {
+    margin-left: 18px;
+}
+.sidebar-submenu-item-link {
+    display: flex;
+    align-items: center;
+    height: 32px;
+    text-decoration: none;
+    color: var(--neutral-700);
+    padding: 0 16px;
+    transition-property: color;
+    transition-duration: var(--duration-150);
+}
+.sidebar-menu-item > .sidebar-submenu .sidebar-submenu-item-link {
+    padding-left: 18px;
+}
+.sidebar-submenu-item-link:hover {
+    color: var(--primary-500);
+}
+.sidebar-submenu-item-link-text {
+    font-size: var(--text-sm);
+    min-width: 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin-right: 8px;
+}
+.sidebar-submenu-item-link-arrow {
+    font-size: var(--text-base);
+    margin-left: auto;
+    flex-shrink: 0;
+}
+.sidebar-submenu-item.active
+    > .sidebar-submenu-item-link
+    > .sidebar-submenu-item-link-arrow {
+    transform: rotateZ(90deg);
+}
+/* end: Sidebar */
+
+/* start: Main */
+.main {
+    margin-left: 240px;
+    transition-property: margin-left;
+    transition-duration: var(--duration-150);
+}
+body.sidebar-collapsed .main {
+    margin-left: 64px;
+}
+.topbar {
+    height: 64px;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+}
+.topbar-toggle {
+    font-size: var(--text-lg);
+    background-color: transparent;
+    border: none;
+    outline: none;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--neutral-500);
+    border-radius: var(--rounded-lg);
+    transition-property: color, background-color;
+    transition-duration: var(--duration-150);
+}
+.topbar-toggle:hover {
+    background-color: var(--neutral-100);
+    color: var(--primary-500);
+}
+/* end: Main */
