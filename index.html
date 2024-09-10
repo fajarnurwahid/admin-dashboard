@@ -12,6 +12,7 @@
     </head>
     <body>
         <!-- start: Sidebar -->
+        <div class="sidebar-overlay" data-sidebar-dismiss></div>
         <div class="sidebar">
             <div class="sidebar-brand-wrapper">
                 <a href="#" class="sidebar-brand">
@@ -263,13 +264,88 @@
         <!-- start: Main -->
         <div class="main">
             <div class="topbar">
+                <a href="#" class="topbar-brand">
+                    <img
+                        src="https://placehold.co/32x32"
+                        alt=""
+                        class="topbar-brand-image"
+                    />
+                </a>
                 <button
                     type="button"
-                    class="topbar-toggle"
-                    data-sidebar-toggle=""
+                    class="topbar-button topbar-toggle"
+                    data-sidebar-toggle
                 >
                     <i class="ri-menu-line"></i>
                 </button>
+                <form action="" class="topbar-search-form">
+                    <span class="topbar-search-form-icon"
+                        ><i class="ri-search-line"></i
+                    ></span>
+                    <input
+                        type="text"
+                        class="topbar-search-form-control"
+                        placeholder="Search"
+                    />
+                </form>
+                <div class="topbar-right">
+                    <div class="dropdown" data-dropdown="language">
+                        <button
+                            type="button"
+                            class="topbar-button"
+                            data-toggle="dropdown"
+                        >
+                            <img
+                                src="https://flagsapi.com/US/shiny/64.png"
+                                class="topbar-language-image"
+                            />
+                        </button>
+                        <div class="dropdown-menu">
+                            <button
+                                type="button"
+                                class="dropdown-menu-item"
+                                data-language-image="https://flagsapi.com/US/shiny/64.png"
+                            >
+                                <img
+                                    src="https://flagsapi.com/US/shiny/64.png"
+                                    alt=""
+                                    class="dropdown-menu-item-image"
+                                />
+                                <span class="dropdown-menu-item-text"
+                                    >United State</span
+                                >
+                            </button>
+                            <button
+                                type="button"
+                                class="dropdown-menu-item"
+                                data-language-image="https://flagsapi.com/ES/shiny/64.png"
+                            >
+                                <img
+                                    src="https://flagsapi.com/ES/shiny/64.png"
+                                    alt=""
+                                    class="dropdown-menu-item-image"
+                                />
+                                <span class="dropdown-menu-item-text"
+                                    >Spanish</span
+                                >
+                            </button>
+                            <button
+                                type="button"
+                                class="dropdown-menu-item"
+                                data-language-image="https://flagsapi.com/ID/shiny/64.png"
+                            >
+                                <img
+                                    src="https://flagsapi.com/ID/shiny/64.png"
+                                    alt=""
+                                    class="dropdown-menu-item-image"
+                                />
+                                <span class="dropdown-menu-item-text"
+                                    >Indonesia</span
+                                >
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <!-- end: Main -->
