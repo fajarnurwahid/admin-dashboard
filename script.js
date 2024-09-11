@@ -91,8 +91,10 @@
         .forEach(function (item) {
             item.addEventListener("dropdown:change", function (e) {
                 const detail = e.detail;
-                const image = detail.toggle.querySelector('.topbar-language-image')
-                if(image) {
+                const image = detail.toggle.querySelector(
+                    ".topbar-language-image"
+                );
+                if (image) {
                     image.src = detail.data.languageImage;
                 }
                 detail.dropdown.classList.remove("active");
@@ -155,7 +157,7 @@
 
     function updateDropdown(item, submenu) {
         window.FloatingUIDOM.computePosition(item, submenu, {
-            placement: "bottom-start",
+            placement: "bottom-end",
             middleware: [
                 window.FloatingUIDOM.shift({
                     padding: 16,
