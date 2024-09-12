@@ -12,7 +12,7 @@
     </head>
     <body>
         <!-- start: Sidebar -->
-        <div class="sidebar-overlay" data-sidebar-dismiss></div>
+        <div class="sidebar-overlay" data-dismiss="sidebar"></div>
         <div class="sidebar">
             <div class="sidebar-brand-wrapper">
                 <a href="#" class="sidebar-brand">
@@ -274,7 +274,7 @@
                 <button
                     type="button"
                     class="topbar-button topbar-toggle"
-                    data-sidebar-toggle
+                    data-toggle="sidebar"
                 >
                     <i class="ri-menu-line"></i>
                 </button>
@@ -282,11 +282,188 @@
                     <span class="topbar-search-form-icon"
                         ><i class="ri-search-line"></i
                     ></span>
+                    <button
+                        type="button"
+                        class="topbar-search-form-clear"
+                        id="topbar-search-clear"
+                    >
+                        <i class="ri-close-circle-fill"></i>
+                    </button>
                     <input
                         type="text"
                         class="topbar-search-form-control"
                         placeholder="Search"
+                        id="topbar-search-input"
                     />
+                    <div
+                        class="topbar-search-form-autocomplete"
+                        id="topbar-search-autocomplete"
+                    >
+                        <div class="topbar-search-form-autocomplete-wrapper">
+                            <div class="topbar-search-form-autocomplete-box">
+                                <p
+                                    class="topbar-search-form-autocomplete-box-title"
+                                >
+                                    Recent Searches
+                                </p>
+                                <div
+                                    class="topbar-search-form-autocomplete-recent"
+                                >
+                                    <button
+                                        type="button"
+                                        class="topbar-search-form-autocomplete-recent-item"
+                                    >
+                                        <span
+                                            class="topbar-search-form-autocomplete-recent-item-icon"
+                                        >
+                                            <i class="ri-search-line"></i>
+                                        </span>
+                                        <span
+                                            class="topbar-search-form-autocomplete-recent-item-text"
+                                            >shoes</span
+                                        >
+                                    </button>
+                                    <button
+                                        type="button"
+                                        class="topbar-search-form-autocomplete-recent-item"
+                                    >
+                                        <span
+                                            class="topbar-search-form-autocomplete-recent-item-icon"
+                                        >
+                                            <i class="ri-search-line"></i>
+                                        </span>
+                                        <span
+                                            class="topbar-search-form-autocomplete-recent-item-text"
+                                            >nike air</span
+                                        >
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="topbar-search-form-autocomplete-box">
+                                <p
+                                    class="topbar-search-form-autocomplete-box-title"
+                                >
+                                    Products
+                                </p>
+                                <div
+                                    class="topbar-search-form-autocomplete-product"
+                                >
+                                    <button
+                                        type="button"
+                                        class="topbar-search-form-autocomplete-product-item"
+                                    >
+                                        <span
+                                            class="topbar-search-form-autocomplete-product-item-icon"
+                                        >
+                                            <i class="ri-search-line"></i>
+                                        </span>
+                                        <span
+                                            class="topbar-search-form-autocomplete-product-item-text"
+                                            >Nike Air Max SC Leather Men's Shoes
+                                            Size 11.5 (White)</span
+                                        >
+                                    </button>
+                                    <button
+                                        type="button"
+                                        class="topbar-search-form-autocomplete-product-item"
+                                    >
+                                        <span
+                                            class="topbar-search-form-autocomplete-product-item-icon"
+                                        >
+                                            <i class="ri-search-line"></i>
+                                        </span>
+                                        <span
+                                            class="topbar-search-form-autocomplete-product-item-text"
+                                            >Nike Air Max SC Leather Men's Shoes
+                                            Size 11.5 (White)</span
+                                        >
+                                    </button>
+                                    <button
+                                        type="button"
+                                        class="topbar-search-form-autocomplete-product-item"
+                                    >
+                                        <span
+                                            class="topbar-search-form-autocomplete-product-item-icon"
+                                        >
+                                            <i class="ri-search-line"></i>
+                                        </span>
+                                        <span
+                                            class="topbar-search-form-autocomplete-product-item-text"
+                                            >Nike Air Max SC Leather Men's Shoes
+                                            Size 11.5 (White)</span
+                                        >
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="topbar-search-form-autocomplete-box">
+                                <p
+                                    class="topbar-search-form-autocomplete-box-title"
+                                >
+                                    Users
+                                </p>
+                                <div
+                                    class="topbar-search-form-autocomplete-user"
+                                >
+                                    <button
+                                        type="button"
+                                        class="topbar-search-form-autocomplete-user-item"
+                                    >
+                                        <img
+                                            src="https://placehold.co/32x32"
+                                            alt=""
+                                            class="topbar-search-form-autocomplete-user-item-image"
+                                        />
+                                        <div
+                                            class="topbar-search-form-autocomplete-user-item-info"
+                                        >
+                                            <p
+                                                class="topbar-search-form-autocomplete-user-item-name"
+                                            >
+                                                John Doe
+                                            </p>
+                                            <p
+                                                class="topbar-search-form-autocomplete-user-item-role"
+                                            >
+                                                Developer
+                                            </p>
+                                        </div>
+                                        <span
+                                            class="topbar-search-form-autocomplete-user-item-status online"
+                                            >online</span
+                                        >
+                                    </button>
+                                    <button
+                                        type="button"
+                                        class="topbar-search-form-autocomplete-user-item"
+                                    >
+                                        <img
+                                            src="https://placehold.co/32x32"
+                                            alt=""
+                                            class="topbar-search-form-autocomplete-user-item-image"
+                                        />
+                                        <div
+                                            class="topbar-search-form-autocomplete-user-item-info"
+                                        >
+                                            <p
+                                                class="topbar-search-form-autocomplete-user-item-name"
+                                            >
+                                                John Doe
+                                            </p>
+                                            <p
+                                                class="topbar-search-form-autocomplete-user-item-role"
+                                            >
+                                                Developer
+                                            </p>
+                                        </div>
+                                        <span
+                                            class="topbar-search-form-autocomplete-user-item-status"
+                                            >offline</span
+                                        >
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </form>
                 <div class="topbar-right">
                     <button

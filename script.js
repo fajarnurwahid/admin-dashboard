@@ -2,6 +2,7 @@
 
 // start: Sidebar
 (function () {
+    let cleanup;
     document
         .querySelectorAll(".sidebar-menu-item, .sidebar-submenu-item")
         .forEach(function (item) {
@@ -31,26 +32,37 @@
                     });
                     if (item.classList.contains("sidebar-menu-item")) {
                         item.addEventListener("mouseenter", function () {
-                            updateFloatingSidebarSubmenu(item, submenu);
+                            cleanup && cleanup();
+                            cleanup = window.FloatingUIDOM.autoUpdate(
+                                item,
+                                submenu,
+                                function () {
+                                    updateFloatingSidebarSubmenu(item, submenu);
+                                }
+                            );
                         });
                     }
                 }
             }
         });
-    document.querySelectorAll("[data-sidebar-toggle]").forEach(function (item) {
-        item.addEventListener("click", function (e) {
-            e.preventDefault();
-            document.body.classList.toggle("sidebar-collapsed");
-            document.body.classList.toggle("sidebar-mobile-shown");
-            document
-                .querySelectorAll(".sidebar-menu-item, .sidebar-submenu-item")
-                .forEach(function (el) {
-                    el.classList.remove("active");
-                });
-        });
-    });
     document
-        .querySelectorAll("[data-sidebar-dismiss]")
+        .querySelectorAll('[data-toggle="sidebar"]')
+        .forEach(function (item) {
+            item.addEventListener("click", function (e) {
+                e.preventDefault();
+                document.body.classList.toggle("sidebar-collapsed");
+                document.body.classList.toggle("sidebar-mobile-shown");
+                document
+                    .querySelectorAll(
+                        ".sidebar-menu-item, .sidebar-submenu-item"
+                    )
+                    .forEach(function (el) {
+                        el.classList.remove("active");
+                    });
+            });
+        });
+    document
+        .querySelectorAll('[data-dismiss="sidebar"]')
         .forEach(function (item) {
             item.addEventListener("click", function (e) {
                 e.preventDefault();
@@ -103,6 +115,58 @@
 })();
 // end: Language
 
+// start: Topbar Search
+(function () {
+    let cleanup;
+    const input = document.getElementById("topbar-search-input");
+    const autocomplete = document.getElementById("topbar-search-autocomplete");
+    const clear = document.getElementById("topbar-search-clear");
+    if (input && autocomplete && clear) {
+        input.addEventListener("input", function () {
+            autocomplete.classList.toggle("active", input.value);
+            clear.classList.toggle("active", input.value);
+            cleanup && cleanup();
+            cleanup = window.FloatingUIDOM.autoUpdate(
+                input,
+                autocomplete,
+                function () {
+                    updateAutocomplete(input, autocomplete);
+                }
+            );
+        });
+        clear.addEventListener("click", function (e) {
+            e.preventDefault();
+            input.value = "";
+            input.dispatchEvent(new Event("input"));
+            input.focus();
+        });
+    }
+    document.addEventListener("click", function (e) {
+        const form = e.target.closest(".topbar-search-form");
+        if (!form && autocomplete) {
+            autocomplete.classList.remove("active");
+        }
+    });
+
+    function updateAutocomplete(item, submenu) {
+        window.FloatingUIDOM.computePosition(item, submenu, {
+            placement: "bottom-start",
+            middleware: [
+                window.FloatingUIDOM.shift({
+                    padding: 16,
+                }),
+                window.FloatingUIDOM.offset(8),
+            ],
+        }).then(function ({ x, y }) {
+            Object.assign(submenu.style, {
+                left: `${x}px`,
+                top: `${y}px`,
+            });
+        });
+    }
+})();
+// end: Topbar Search
+
 // start: Dropdown
 (function () {
     let cleanup;
@@ -137,6 +201,7 @@
                     '[data-toggle="dropdown"]'
                 );
                 if (toggle) {
+                    e.preventDefault();
                     const event = new CustomEvent("dropdown:change", {
                         detail: {
                             dropdown,
