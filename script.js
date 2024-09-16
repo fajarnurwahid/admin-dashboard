@@ -98,20 +98,21 @@
 
 // start: Language
 (function () {
-    document
-        .querySelectorAll('[data-dropdown="language"]')
-        .forEach(function (item) {
-            item.addEventListener("dropdown:change", function (e) {
-                const detail = e.detail;
-                const image = detail.toggle.querySelector(
-                    ".topbar-language-image"
-                );
-                if (image) {
-                    image.src = detail.data.languageImage;
-                }
-                detail.dropdown.classList.remove("active");
-            });
-        });
+    const dropdown = document.getElementById("topbar-language-dropdown");
+    if (dropdown) {
+        const image = dropdown.querySelector(".topbar-language-image");
+        if (image) {
+            dropdown
+                .querySelectorAll("[data-language-image]")
+                .forEach(function (item) {
+                    item.addEventListener("click", function (e) {
+                        e.preventDefault();
+                        image.src = item.dataset.languageImage;
+                        dropdown.classList.remove("active");
+                    });
+                });
+        }
+    }
 })();
 // end: Language
 
@@ -121,6 +122,7 @@
     const input = document.getElementById("topbar-search-input");
     const autocomplete = document.getElementById("topbar-search-autocomplete");
     const clear = document.getElementById("topbar-search-clear");
+    const wrapper = document.getElementById("topbar-search-form-wrapper");
     if (input && autocomplete && clear) {
         input.addEventListener("input", function () {
             autocomplete.classList.toggle("active", input.value);
@@ -140,6 +142,25 @@
             input.dispatchEvent(new Event("input"));
             input.focus();
         });
+    }
+    if (wrapper) {
+        document
+            .querySelectorAll('[data-toggle="topbar-search"]')
+            .forEach(function (item) {
+                item.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    wrapper.classList.add("active");
+                    input.focus();
+                });
+            });
+        document
+            .querySelectorAll('[data-dismiss="topbar-search"]')
+            .forEach(function (item) {
+                item.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    wrapper.classList.remove("active");
+                });
+            });
     }
     document.addEventListener("click", function (e) {
         const form = e.target.closest(".topbar-search-form");
@@ -192,26 +213,6 @@
                         updateDropdown(dropdownToggle, dropdownMenu);
                     }
                 );
-            }
-        } else if (e.target.closest(".dropdown")) {
-            const item = e.target.closest(".dropdown-menu-item");
-            const dropdown = e.target.closest(".dropdown");
-            if (dropdown && item) {
-                const toggle = dropdown.querySelector(
-                    '[data-toggle="dropdown"]'
-                );
-                if (toggle) {
-                    e.preventDefault();
-                    const event = new CustomEvent("dropdown:change", {
-                        detail: {
-                            dropdown,
-                            element: item,
-                            toggle,
-                            data: item.dataset,
-                        },
-                    });
-                    dropdown.dispatchEvent(event);
-                }
             }
         } else {
             document.querySelectorAll(".dropdown").forEach(function (el) {

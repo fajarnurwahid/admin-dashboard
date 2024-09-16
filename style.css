@@ -417,11 +417,13 @@ body.sidebar-collapsed .main {
     display: flex;
     align-items: center;
     padding: 0 16px;
+    position: relative;
 }
 .topbar-brand {
     display: none;
 }
 .topbar-button {
+    flex-shrink: 0;
     width: 36px;
     height: 36px;
     display: flex;
@@ -448,9 +450,15 @@ body.sidebar-collapsed .main {
     flex-shrink: 0;
     margin-right: 16px;
 }
+.topbar-search-form-wrapper {
+    max-width: 240px;
+    width: 100%;
+}
+.topbar-button-search-form-back {
+    display: none;
+}
 .topbar-search-form {
     position: relative;
-    max-width: 240px;
     width: 100%;
 }
 .topbar-search-form-control {
@@ -507,6 +515,7 @@ body.sidebar-collapsed .main {
     border-radius: var(--rounded-lg);
     padding: 12px 0;
     max-width: 400px;
+    width: 100%;
 }
 .topbar-search-form-autocomplete.active {
     display: block;
@@ -669,13 +678,13 @@ body.sidebar-collapsed .main {
 .topbar-right > :last-child {
     margin-right: 0;
 }
+.topbar-button-search {
+    display: none;
+}
 .topbar-language-image {
     width: 24px;
 }
-.topbar-button-cart-total {
-    position: absolute;
-    top: 0;
-    right: 0;
+.topbar-button-total {
     width: 16px;
     height: 16px;
     border-radius: var(--rounded-full);
@@ -684,11 +693,20 @@ body.sidebar-collapsed .main {
     justify-content: center;
     font-size: var(--text-xxs);
     font-weight: 500;
+}
+.topbar-button-total-cart {
+    position: absolute;
+    top: 0;
+    right: 0;
     background-color: var(--danger-500);
     color: var(--white);
 }
-.topbar-button-search {
-    display: none;
+.topbar-button-total-notification {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: var(--primary-500);
+    color: var(--white);
 }
 /* end: Main */
 
@@ -776,6 +794,63 @@ body.sidebar-collapsed .main {
 }
 /* end: Dropdown Cart */
 
+/* start: Dropdown Notification */
+.dropdown-menu-notification {
+    max-width: 320px;
+    width: 100%;
+}
+.dropdown-menu-notification-wrapper {
+    max-height: 300px;
+    overflow-y: auto;
+}
+.dropdown-menu-notification-item {
+    display: flex;
+    text-decoration: none;
+    padding: 8px 16px;
+}
+.dropdown-menu-notification-item:hover {
+    background-color: var(--neutral-100);
+}
+.dropdown-menu-notification-item-icon {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--rounded-full);
+    flex-shrink: 0;
+    margin-right: 12px;
+}
+.dropdown-menu-notification-item-icon.success {
+    background-color: var(--success-100);
+    color: var(--success-500);
+}
+.dropdown-menu-notification-item-icon.danger {
+    background-color: var(--danger-100);
+    color: var(--danger-500);
+}
+.dropdown-menu-notification-item-icon.warning {
+    background-color: var(--warning-100);
+    color: var(--warning-500);
+}
+.dropdown-menu-notification-item-right {
+    min-width: 0;
+    width: 100%;
+}
+.dropdown-menu-notification-item-text {
+    font-size: var(--text-sm);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin-bottom: 4px;
+    color: var(--neutral-700);
+}
+.dropdown-menu-notification-item-time {
+    font-size: var(--text-xs);
+    color: var(--neutral-500);
+}
+/* end: Dropdown Notification */
+
 /* start: Breakpoints */
 @media screen and (max-width: 767px) {
     .sidebar-overlay {
@@ -843,8 +918,28 @@ body.sidebar-collapsed .main {
     .topbar-button-search {
         display: flex;
     }
-    .topbar-search-form {
+    .topbar-search-form-wrapper {
         display: none;
+    }
+    .topbar-search-form-wrapper.active {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        max-width: unset;
+        background-color: var(--white);
+        padding: 0 16px;
+        z-index: 10;
+    }
+    .topbar-button-search-form-back {
+        display: flex;
+        margin-right: 8px;
+    }
+    .topbar-search-form-autocomplete {
+        max-width: calc(100% - 32px);
     }
 }
 /* end: Breakpoints */

@@ -278,201 +278,222 @@
                 >
                     <i class="ri-menu-line"></i>
                 </button>
-                <form action="" class="topbar-search-form">
-                    <span class="topbar-search-form-icon"
-                        ><i class="ri-search-line"></i
-                    ></span>
+                <div
+                    class="topbar-search-form-wrapper"
+                    id="topbar-search-form-wrapper"
+                >
                     <button
                         type="button"
-                        class="topbar-search-form-clear"
-                        id="topbar-search-clear"
+                        class="topbar-button topbar-button-search-form-back"
+                        data-dismiss="topbar-search"
                     >
-                        <i class="ri-close-circle-fill"></i>
+                        <i class="ri-arrow-left-line"></i>
                     </button>
-                    <input
-                        type="text"
-                        class="topbar-search-form-control"
-                        placeholder="Search"
-                        id="topbar-search-input"
-                    />
-                    <div
-                        class="topbar-search-form-autocomplete"
-                        id="topbar-search-autocomplete"
-                    >
-                        <div class="topbar-search-form-autocomplete-wrapper">
-                            <div class="topbar-search-form-autocomplete-box">
-                                <p
-                                    class="topbar-search-form-autocomplete-box-title"
-                                >
-                                    Recent Searches
-                                </p>
+                    <form action="" class="topbar-search-form">
+                        <span class="topbar-search-form-icon"
+                            ><i class="ri-search-line"></i
+                        ></span>
+                        <button
+                            type="button"
+                            class="topbar-search-form-clear"
+                            id="topbar-search-clear"
+                        >
+                            <i class="ri-close-circle-fill"></i>
+                        </button>
+                        <input
+                            type="text"
+                            class="topbar-search-form-control"
+                            placeholder="Search"
+                            id="topbar-search-input"
+                        />
+                        <div
+                            class="topbar-search-form-autocomplete"
+                            id="topbar-search-autocomplete"
+                        >
+                            <div
+                                class="topbar-search-form-autocomplete-wrapper"
+                            >
                                 <div
-                                    class="topbar-search-form-autocomplete-recent"
+                                    class="topbar-search-form-autocomplete-box"
                                 >
-                                    <button
-                                        type="button"
-                                        class="topbar-search-form-autocomplete-recent-item"
+                                    <p
+                                        class="topbar-search-form-autocomplete-box-title"
                                     >
-                                        <span
-                                            class="topbar-search-form-autocomplete-recent-item-icon"
-                                        >
-                                            <i class="ri-search-line"></i>
-                                        </span>
-                                        <span
-                                            class="topbar-search-form-autocomplete-recent-item-text"
-                                            >shoes</span
-                                        >
-                                    </button>
-                                    <button
-                                        type="button"
-                                        class="topbar-search-form-autocomplete-recent-item"
+                                        Recent Searches
+                                    </p>
+                                    <div
+                                        class="topbar-search-form-autocomplete-recent"
                                     >
-                                        <span
-                                            class="topbar-search-form-autocomplete-recent-item-icon"
+                                        <button
+                                            type="button"
+                                            class="topbar-search-form-autocomplete-recent-item"
                                         >
-                                            <i class="ri-search-line"></i>
-                                        </span>
-                                        <span
-                                            class="topbar-search-form-autocomplete-recent-item-text"
-                                            >nike air</span
+                                            <span
+                                                class="topbar-search-form-autocomplete-recent-item-icon"
+                                            >
+                                                <i class="ri-search-line"></i>
+                                            </span>
+                                            <span
+                                                class="topbar-search-form-autocomplete-recent-item-text"
+                                                >shoes</span
+                                            >
+                                        </button>
+                                        <button
+                                            type="button"
+                                            class="topbar-search-form-autocomplete-recent-item"
                                         >
-                                    </button>
+                                            <span
+                                                class="topbar-search-form-autocomplete-recent-item-icon"
+                                            >
+                                                <i class="ri-search-line"></i>
+                                            </span>
+                                            <span
+                                                class="topbar-search-form-autocomplete-recent-item-text"
+                                                >nike air</span
+                                            >
+                                        </button>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="topbar-search-form-autocomplete-box">
-                                <p
-                                    class="topbar-search-form-autocomplete-box-title"
-                                >
-                                    Products
-                                </p>
                                 <div
-                                    class="topbar-search-form-autocomplete-product"
+                                    class="topbar-search-form-autocomplete-box"
                                 >
-                                    <button
-                                        type="button"
-                                        class="topbar-search-form-autocomplete-product-item"
+                                    <p
+                                        class="topbar-search-form-autocomplete-box-title"
                                     >
-                                        <span
-                                            class="topbar-search-form-autocomplete-product-item-icon"
-                                        >
-                                            <i class="ri-search-line"></i>
-                                        </span>
-                                        <span
-                                            class="topbar-search-form-autocomplete-product-item-text"
-                                            >Nike Air Max SC Leather Men's Shoes
-                                            Size 11.5 (White)</span
-                                        >
-                                    </button>
-                                    <button
-                                        type="button"
-                                        class="topbar-search-form-autocomplete-product-item"
+                                        Products
+                                    </p>
+                                    <div
+                                        class="topbar-search-form-autocomplete-product"
                                     >
-                                        <span
-                                            class="topbar-search-form-autocomplete-product-item-icon"
+                                        <button
+                                            type="button"
+                                            class="topbar-search-form-autocomplete-product-item"
                                         >
-                                            <i class="ri-search-line"></i>
-                                        </span>
-                                        <span
-                                            class="topbar-search-form-autocomplete-product-item-text"
-                                            >Nike Air Max SC Leather Men's Shoes
-                                            Size 11.5 (White)</span
+                                            <span
+                                                class="topbar-search-form-autocomplete-product-item-icon"
+                                            >
+                                                <i class="ri-search-line"></i>
+                                            </span>
+                                            <span
+                                                class="topbar-search-form-autocomplete-product-item-text"
+                                                >Nike Air Max SC Leather Men's
+                                                Shoes Size 11.5 (White)</span
+                                            >
+                                        </button>
+                                        <button
+                                            type="button"
+                                            class="topbar-search-form-autocomplete-product-item"
                                         >
-                                    </button>
-                                    <button
-                                        type="button"
-                                        class="topbar-search-form-autocomplete-product-item"
-                                    >
-                                        <span
-                                            class="topbar-search-form-autocomplete-product-item-icon"
+                                            <span
+                                                class="topbar-search-form-autocomplete-product-item-icon"
+                                            >
+                                                <i class="ri-search-line"></i>
+                                            </span>
+                                            <span
+                                                class="topbar-search-form-autocomplete-product-item-text"
+                                                >Nike Air Max SC Leather Men's
+                                                Shoes Size 11.5 (White)</span
+                                            >
+                                        </button>
+                                        <button
+                                            type="button"
+                                            class="topbar-search-form-autocomplete-product-item"
                                         >
-                                            <i class="ri-search-line"></i>
-                                        </span>
-                                        <span
-                                            class="topbar-search-form-autocomplete-product-item-text"
-                                            >Nike Air Max SC Leather Men's Shoes
-                                            Size 11.5 (White)</span
-                                        >
-                                    </button>
+                                            <span
+                                                class="topbar-search-form-autocomplete-product-item-icon"
+                                            >
+                                                <i class="ri-search-line"></i>
+                                            </span>
+                                            <span
+                                                class="topbar-search-form-autocomplete-product-item-text"
+                                                >Nike Air Max SC Leather Men's
+                                                Shoes Size 11.5 (White)</span
+                                            >
+                                        </button>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="topbar-search-form-autocomplete-box">
-                                <p
-                                    class="topbar-search-form-autocomplete-box-title"
-                                >
-                                    Users
-                                </p>
                                 <div
-                                    class="topbar-search-form-autocomplete-user"
+                                    class="topbar-search-form-autocomplete-box"
                                 >
-                                    <button
-                                        type="button"
-                                        class="topbar-search-form-autocomplete-user-item"
+                                    <p
+                                        class="topbar-search-form-autocomplete-box-title"
                                     >
-                                        <img
-                                            src="https://placehold.co/32x32"
-                                            alt=""
-                                            class="topbar-search-form-autocomplete-user-item-image"
-                                        />
-                                        <div
-                                            class="topbar-search-form-autocomplete-user-item-info"
-                                        >
-                                            <p
-                                                class="topbar-search-form-autocomplete-user-item-name"
-                                            >
-                                                John Doe
-                                            </p>
-                                            <p
-                                                class="topbar-search-form-autocomplete-user-item-role"
-                                            >
-                                                Developer
-                                            </p>
-                                        </div>
-                                        <span
-                                            class="topbar-search-form-autocomplete-user-item-status online"
-                                            >online</span
-                                        >
-                                    </button>
-                                    <button
-                                        type="button"
-                                        class="topbar-search-form-autocomplete-user-item"
+                                        Users
+                                    </p>
+                                    <div
+                                        class="topbar-search-form-autocomplete-user"
                                     >
-                                        <img
-                                            src="https://placehold.co/32x32"
-                                            alt=""
-                                            class="topbar-search-form-autocomplete-user-item-image"
-                                        />
-                                        <div
-                                            class="topbar-search-form-autocomplete-user-item-info"
+                                        <button
+                                            type="button"
+                                            class="topbar-search-form-autocomplete-user-item"
                                         >
-                                            <p
-                                                class="topbar-search-form-autocomplete-user-item-name"
+                                            <img
+                                                src="https://placehold.co/32x32"
+                                                alt=""
+                                                class="topbar-search-form-autocomplete-user-item-image"
+                                            />
+                                            <div
+                                                class="topbar-search-form-autocomplete-user-item-info"
                                             >
-                                                John Doe
-                                            </p>
-                                            <p
-                                                class="topbar-search-form-autocomplete-user-item-role"
+                                                <p
+                                                    class="topbar-search-form-autocomplete-user-item-name"
+                                                >
+                                                    John Doe
+                                                </p>
+                                                <p
+                                                    class="topbar-search-form-autocomplete-user-item-role"
+                                                >
+                                                    Developer
+                                                </p>
+                                            </div>
+                                            <span
+                                                class="topbar-search-form-autocomplete-user-item-status online"
+                                                >online</span
                                             >
-                                                Developer
-                                            </p>
-                                        </div>
-                                        <span
-                                            class="topbar-search-form-autocomplete-user-item-status"
-                                            >offline</span
+                                        </button>
+                                        <button
+                                            type="button"
+                                            class="topbar-search-form-autocomplete-user-item"
                                         >
-                                    </button>
+                                            <img
+                                                src="https://placehold.co/32x32"
+                                                alt=""
+                                                class="topbar-search-form-autocomplete-user-item-image"
+                                            />
+                                            <div
+                                                class="topbar-search-form-autocomplete-user-item-info"
+                                            >
+                                                <p
+                                                    class="topbar-search-form-autocomplete-user-item-name"
+                                                >
+                                                    John Doe
+                                                </p>
+                                                <p
+                                                    class="topbar-search-form-autocomplete-user-item-role"
+                                                >
+                                                    Developer
+                                                </p>
+                                            </div>
+                                            <span
+                                                class="topbar-search-form-autocomplete-user-item-status"
+                                                >offline</span
+                                            >
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </form>
+                    </form>
+                </div>
                 <div class="topbar-right">
                     <button
                         type="button"
                         class="topbar-button topbar-button-search"
+                        data-toggle="topbar-search"
                     >
                         <i class="ri-search-line"></i>
                     </button>
-                    <div class="dropdown" data-dropdown="language">
+                    <div class="dropdown" id="topbar-language-dropdown">
                         <button
                             type="button"
                             class="topbar-button"
@@ -535,7 +556,10 @@
                             data-toggle="dropdown"
                         >
                             <i class="ri-shopping-cart-line"></i>
-                            <span class="topbar-button-cart-total">5</span>
+                            <span
+                                class="topbar-button-total topbar-button-total-cart"
+                                >5</span
+                            >
                         </button>
                         <div class="dropdown-menu dropdown-menu-cart">
                             <div class="dropdown-menu-header">
@@ -681,6 +705,252 @@
                                 <a href="#" class="btn btn-primary btn-block"
                                     >Checkout</a
                                 >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <button
+                            type="button"
+                            class="topbar-button"
+                            data-toggle="dropdown"
+                        >
+                            <i class="ri-notification-3-line"></i>
+                            <span
+                                class="topbar-button-total topbar-button-total-notification"
+                                >5</span
+                            >
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-notification">
+                            <div class="dropdown-menu-header">
+                                <p class="dropdown-menu-title">Notifications</p>
+                                <span class="badge badge-primary">4 items</span>
+                            </div>
+                            <div class="dropdown-menu-notification-wrapper">
+                                <a
+                                    href="#"
+                                    class="dropdown-menu-notification-item"
+                                >
+                                    <span
+                                        class="dropdown-menu-notification-item-icon success"
+                                    >
+                                        <i class="ri-check-line"></i>
+                                    </span>
+                                    <div
+                                        class="dropdown-menu-notification-item-right"
+                                    >
+                                        <p
+                                            class="dropdown-menu-notification-item-text"
+                                        >
+                                            Lorem ipsum dolor sit amet
+                                            consectetur adipisicing.
+                                        </p>
+                                        <p
+                                            class="dropdown-menu-notification-item-time"
+                                        >
+                                            3 days ago
+                                        </p>
+                                    </div>
+                                </a>
+                                <a
+                                    href="#"
+                                    class="dropdown-menu-notification-item"
+                                >
+                                    <span
+                                        class="dropdown-menu-notification-item-icon danger"
+                                    >
+                                        <i class="ri-alert-line"></i>
+                                    </span>
+                                    <div
+                                        class="dropdown-menu-notification-item-right"
+                                    >
+                                        <p
+                                            class="dropdown-menu-notification-item-text"
+                                        >
+                                            Lorem ipsum dolor sit amet
+                                            consectetur adipisicing.
+                                        </p>
+                                        <p
+                                            class="dropdown-menu-notification-item-time"
+                                        >
+                                            3 days ago
+                                        </p>
+                                    </div>
+                                </a>
+                                <a
+                                    href="#"
+                                    class="dropdown-menu-notification-item"
+                                >
+                                    <span
+                                        class="dropdown-menu-notification-item-icon warning"
+                                    >
+                                        <i class="ri-alarm-warning-line"></i>
+                                    </span>
+                                    <div
+                                        class="dropdown-menu-notification-item-right"
+                                    >
+                                        <p
+                                            class="dropdown-menu-notification-item-text"
+                                        >
+                                            Lorem ipsum dolor sit amet
+                                            consectetur adipisicing.
+                                        </p>
+                                        <p
+                                            class="dropdown-menu-notification-item-time"
+                                        >
+                                            3 days ago
+                                        </p>
+                                    </div>
+                                </a>
+                                <a
+                                    href="#"
+                                    class="dropdown-menu-notification-item"
+                                >
+                                    <span
+                                        class="dropdown-menu-notification-item-icon success"
+                                    >
+                                        <i class="ri-check-line"></i>
+                                    </span>
+                                    <div
+                                        class="dropdown-menu-notification-item-right"
+                                    >
+                                        <p
+                                            class="dropdown-menu-notification-item-text"
+                                        >
+                                            Lorem ipsum dolor sit amet
+                                            consectetur adipisicing.
+                                        </p>
+                                        <p
+                                            class="dropdown-menu-notification-item-time"
+                                        >
+                                            3 days ago
+                                        </p>
+                                    </div>
+                                </a>
+                                <a
+                                    href="#"
+                                    class="dropdown-menu-notification-item"
+                                >
+                                    <span
+                                        class="dropdown-menu-notification-item-icon danger"
+                                    >
+                                        <i class="ri-alert-line"></i>
+                                    </span>
+                                    <div
+                                        class="dropdown-menu-notification-item-right"
+                                    >
+                                        <p
+                                            class="dropdown-menu-notification-item-text"
+                                        >
+                                            Lorem ipsum dolor sit amet
+                                            consectetur adipisicing.
+                                        </p>
+                                        <p
+                                            class="dropdown-menu-notification-item-time"
+                                        >
+                                            3 days ago
+                                        </p>
+                                    </div>
+                                </a>
+                                <a
+                                    href="#"
+                                    class="dropdown-menu-notification-item"
+                                >
+                                    <span
+                                        class="dropdown-menu-notification-item-icon warning"
+                                    >
+                                        <i class="ri-alarm-warning-line"></i>
+                                    </span>
+                                    <div
+                                        class="dropdown-menu-notification-item-right"
+                                    >
+                                        <p
+                                            class="dropdown-menu-notification-item-text"
+                                        >
+                                            Lorem ipsum dolor sit amet
+                                            consectetur adipisicing.
+                                        </p>
+                                        <p
+                                            class="dropdown-menu-notification-item-time"
+                                        >
+                                            3 days ago
+                                        </p>
+                                    </div>
+                                </a>
+                                <a
+                                    href="#"
+                                    class="dropdown-menu-notification-item"
+                                >
+                                    <span
+                                        class="dropdown-menu-notification-item-icon success"
+                                    >
+                                        <i class="ri-check-line"></i>
+                                    </span>
+                                    <div
+                                        class="dropdown-menu-notification-item-right"
+                                    >
+                                        <p
+                                            class="dropdown-menu-notification-item-text"
+                                        >
+                                            Lorem ipsum dolor sit amet
+                                            consectetur adipisicing.
+                                        </p>
+                                        <p
+                                            class="dropdown-menu-notification-item-time"
+                                        >
+                                            3 days ago
+                                        </p>
+                                    </div>
+                                </a>
+                                <a
+                                    href="#"
+                                    class="dropdown-menu-notification-item"
+                                >
+                                    <span
+                                        class="dropdown-menu-notification-item-icon danger"
+                                    >
+                                        <i class="ri-alert-line"></i>
+                                    </span>
+                                    <div
+                                        class="dropdown-menu-notification-item-right"
+                                    >
+                                        <p
+                                            class="dropdown-menu-notification-item-text"
+                                        >
+                                            Lorem ipsum dolor sit amet
+                                            consectetur adipisicing.
+                                        </p>
+                                        <p
+                                            class="dropdown-menu-notification-item-time"
+                                        >
+                                            3 days ago
+                                        </p>
+                                    </div>
+                                </a>
+                                <a
+                                    href="#"
+                                    class="dropdown-menu-notification-item"
+                                >
+                                    <span
+                                        class="dropdown-menu-notification-item-icon warning"
+                                    >
+                                        <i class="ri-alarm-warning-line"></i>
+                                    </span>
+                                    <div
+                                        class="dropdown-menu-notification-item-right"
+                                    >
+                                        <p
+                                            class="dropdown-menu-notification-item-text"
+                                        >
+                                            Lorem ipsum dolor sit amet
+                                            consectetur adipisicing.
+                                        </p>
+                                        <p
+                                            class="dropdown-menu-notification-item-time"
+                                        >
+                                            3 days ago
+                                        </p>
+                                    </div>
+                                </a>
                             </div>
                         </div>
                     </div>
